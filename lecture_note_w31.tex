@@ -1,0 +1,200 @@
+%\textbf{并矢与几何矢表示}
+%设$\v{a},\v{b}$是三维空间向量$,则$\v{a},\v{b}$的几何矢为$\v{a}\v{b}$,$\v{a},\v{b}$的外积为$\v{a}\wedge \v{b}$
+\textbf{流动运动学常用物理量的张量表示}
+
+变形率张量
+$\bm{S}=[s_{ij}]=\frac{1}{2}\left(\Delta \v{v}+(\Delta \v{v})^{\mathrm{T}}\right)$,类似弹性力学中的应变张量，为二阶对称张量。
+反称张量$\bm{\Omega}=[\Omega_{ij}]=[\epsilon_{ijk}\omega_k]$,其中$\omega=\frac{1}{2}\Delta \times \bm{v}$
+并且我们有:
+\begin{equation}\label{eq:w31AS}
+\nabla \v{v}=\bm{S}-\bm{\Omega}\cite{velocityGradient}
+\end{equation}
+其中速度梯度张量 $\nabla \v{v}=[v_{ij}]=[\frac{\partial v_i}{\partial x_j}]$
+\footnote{$\bm{\Omega}$前是减号不是加号}
+
+\textbf{运动分析}
+
+\begin{figure}[!ht]
+\centering
+\input{velocityDecomposition.tex}
+\caption{流体质点从$O$点经$\Delta t$时间运动到$A$点}\label{fig:311}
+\end{figure}
+
+Helmholz 速度分解定理,参考图\ref{fig:311},有：
+\begin{align}
+\v{v_{A}} = & v_j(\v{x}+\delta \v{x},t)\v{e_j}\\
+=& [v_j(\v{x},t)+\frac{\partial v_j}{\partial x_i}\delta x_i]\v{e_j}\\
+=& [v_j(\v{x},t)+s_{ij}(\v{x},t)\delta x_i+\Omega_{ij}((\v{x},t))\delta x_i]\v{e_j}\,\footnotemark\\
+=& \v{v_O} + \delta x \cdot \v{S_0} + \v{\omega_O}\times \delta \v{x}
+\end{align}
+\footnotetext{$\frac{\partial v_j}{\partial x_i}$是$v_{ji}$,与\eqref{eq:w31AS}不矛盾。}
+其中最后一式用到了$\bm{\Omega}$和$\v{\omega}$的关系式:
+\begin{equation}
+\bm{\Omega} \v{x}= \v{\omega}\times \v{x} \cite{angularVelocityTensor}
+\end{equation}
+
+
+\textbf{涡量(vortex)}
+
+定义为:$\v{\Omega}=\nabla \times \v{v}=2\v{\omega}$，其散度为零。
+
+对于有相同流线方程的流场，其涡量场可以不同。比如流场
+\begin{equation}\label{eq:31example}
+\begin{cases}u=-y\\v=x\end{cases}(a) \begin{cases}u=-\frac{y}{x^2+y^2}\\v=\frac{x}{x^2+y^2}\end{cases}(b)
+\end{equation}
+二者的流线簇均为$x^2+y^2=c$,但$(a)$中涡量为$2\v{k}$
+$(b)$中速度场在极坐标下为$\frac{\v{e_{\theta}}}{r}$,对于非原点处，
+由极坐标系散度公式\cite{CylindricalCoordinates}得其散度为$\frac{\partial 1/r}{\partial \theta}=0$,
+由极坐标系旋度公式\cite{CurlFormular}得涡量为$\v{0}$。
+在原点处，由格林公式，速度的环量（环量积分）等于涡通量：
+\begin{align}
+\Gamma_l =& \oint_l \v{v}\cdot d\v{x}\\
+=& \int_{0}^{2\pi} \frac{\v{e_{\theta}}}{r}\cdot  \v{e_{\theta}} rd\theta \\
+=& 2\pi
+\end{align}
+另外不难验证$\arctan\frac{y}{x}$是后一个流场的势函数，在极坐标下其表示为$\theta$。
+
+其他概念:
+
+涡线、涡面、涡管
+
+\begin{figure}[!ht]
+\def\svgwidth{5cm}
+\centering
+\input{vortexIntensity.eps_tex}
+\caption{涡通量的守恒性质}\label{fig:312}
+\end{figure}
+
+
+
+参考图\ref{fig:312},对于涡管的任一两个横截面$A_1,A_2$,有
+\begin{equation}
+\iint\limits_{A_1} \v{\Omega}\cdot \v{n_1} dA=\iint\limits_{A_2} \v{\Omega}\cdot \v{n_2} dA
+\end{equation}
+即沿涡管各截面涡通量大小相等。
+
+\textbf{给定流场的散度与涡量求速度场}
+
+已知区域$D$内的速度场$\v{v}$在区域内满足如下的偏微分方程(PDE)：
+\begin{equation}
+\begin{cases}
+\nabla \cdot \v{v} &=\theta (\v{x})\\
+\nabla \times \v{v} &=\v{\Omega}(\v{x})\\
+\end{cases}
+\end{equation}
+在边界上给出法向速度的大小：$\v{v}\cdot \v{n} =v_{bn}(\v{x})$
+则由Poisson方程在Neumann边界条件下解的性质可以得到速度场是唯一确定的。
+
+
+首先运用PDE的叠加原理将原问题分解为求如下三个PDE:
+\begin{equation}\label{eq:311t3}
+\begin{cases}
+\nabla \cdot \v{v_E} &=\theta (\v{x})\\
+\nabla \times \v{v_E} &=\v{0}\\
+\end{cases}(a)
+\begin{cases}
+\nabla \cdot \v{v_V} &=0\\
+\nabla \times \v{v_V} &=\v{\Omega}(\v{x})\\
+\end{cases}(b)
+\begin{cases}
+\nabla \cdot \v{u} &=0\\
+\nabla \times \v{u} &=\v{0}\\
+\end{cases}(c)
+\end{equation}
+其中(\ref{eq:311t3}.c)式附加第二类边界条件$\v{u}\cdot \v{n} =v_{bn}(\v{x})-\v{v_E}\cdot \v{n}-\v{v_N}\cdot \v{n}$
+
+对于(\ref{eq:311t3}.a),由无旋条件可知存在势场$\Phi_E$使得 $\v{v_E}=\nabla \Phi_E$,于是得到$\Phi_E$在求解区域内满足Poisson 方程：
+\begin{equation}
+\nabla^2 \Phi_E(\v{x})=\theta(\v{x})
+\end{equation}
+该方程可由三维Laplace方程的基本解$\frac{1}{|\v{x}|}$与$\theta(\v{x})$做卷积得到\cite{FundamentalSolution},写成分量的形式即为:
+\begin{equation}\label{eq:31similar}
+\Phi_E(x,y,z)=-\frac{1}{4\pi} \iiint\limits_D \frac{\theta(\xi,\eta,\zeta)}{R(x,y,z;\xi,\eta,\zeta)}d\xi d\eta d\zeta
+\end{equation}
+这里
+\begin{align}
+R(x,y,z;\xi,\eta,\zeta)=&|\v{R}((x,y,z;\xi,\eta,\zeta))|\\
+\v{R}((x,y,z;\xi,\eta,\zeta))=&(x-\xi)\v{i}+(y-\eta)\v{j}+(z-\zeta)\v{k}
+\end{align}
+直接计算得到：$\nabla \frac{1}{R}=-\frac{\v{R}}{R^3}$，其中梯度算子是关于$(x,y,z)$的。
+所以我们有:
+\begin{equation}
+\v{v_E}=\frac{1}{4\pi} \iiint\limits_D \frac{\theta(\xi,\eta,\zeta)\v{R}}{R^3}d\xi d\eta d\zeta
+\end{equation}
+比如散度场$\theta$为$\delta$函数，可以得到点源诱导的速度场为:
+\begin{equation}
+\v{v_E}=\frac{1}{4\pi} \frac{x\v{i}+y\v{j}+z\v{k}}{(x^2+y^2+z^2)^{3/2}}
+\end{equation}
+这与万有引力场和点电荷诱导的静电场形式相同。
+
+对于(\ref{eq:311t3}.b),难以得到一般条件下的闭式解，因此对涡量$\Omega$在求解域的边界上附加条件
+\begin{equation}\label{eq:31supp}
+\v{\Omega}\cdot \v{n}=0
+\end{equation}
+为此，我们先用张量分析的$\epsilon-\delta$恒等式$\epsilon_{ilm}\epsilon_{ijm}=\delta_{jl}\delta_{mn}-\delta_{mj}\delta_{ln}$证明如下的等式:
+\begin{equation}\label{eq:312times}
+\nabla \times(\nabla \times \v{A})=\nabla(\nabla \cdot \v{A})-\nabla\cdot(\nabla \v{A})
+\end{equation}
+\begin{proof}
+\begin{align*}
+\nabla \times(\nabla \times \v{A}) =& \nabla (\epsilon_{ijk} \frac{\partial A_k}{\partial x_j} \v{e_i})\\
+=&\epsilon_{nmi} \frac{\partial (\epsilon_{ijk} \frac{\partial A_k}{\partial x_j})}{\partial x_m} \v{e_n}\\
+=&(\delta_{nj}\delta_{mk}-\delta{nk}\delta_{mj})\frac{\partial^2 A_k}{\partial x_j^2}\v{e_n}\footnotemark\\
+=&(\frac{\partial^2 A_k}{\partial x_n^2}\v{e_n})-(\frac{\partial^2 A_n}{\partial x_j^2}\v{e_n})\\
+=&(\frac{\partial}{\partial x_n}(\frac{\partial A_k}{\partial x_n})\v{e_n})-(\frac{\partial}{\partial x_k}(\frac{\partial A_n}{\partial x_j}\v{e_n}\v{e_j})\cdot \v{e_k})\\
+=&(\frac{\partial}{\partial x_n}(\nabla\cdot \v{A})\v{e_n})-(\frac{\partial}{\partial x_j}(\nabla \v{A})\cdot \v{e_j})\\
+=&\nabla(\nabla \cdot \v{A})-\nabla\cdot(\nabla \v{A})
+\end{align*}
+\footnotetext{$\frac{\partial^2 A_k}{\partial x_j^2}\v{e_n}$是对$A$的各个分量求Laplace，相当于对矢量$A$先求梯度再求散度。}
+\end{proof}
+运用上面的等式，我们推导 \textbf{Biot-Savart 定律}:
+
+首先假设 (\ref{eq:311t3}.b) 中 $\v{v_V}$可以写成$\v{v_V}=\nabla \times \v{A}$,则(\ref{eq:311t3}.b)中第一式自然满足，而第二式由\eqref{eq:312times}式可化为：
+\begin{equation}\label{eq:31AAA}
+\nabla(\nabla \cdot \v{A})-\nabla\cdot(\nabla \v{A})=\v{\Omega}
+\end{equation}
+下面我们证明对于区域$D$，不考虑边界条件,\eqref{eq:31AAA}的一个解为:
+\begin{equation}
+\v{A}=\frac{1}{4\pi} \iiint\limits_D \frac{\v{\Omega}(\xi,\eta,\zeta)}{R(x,y,z;\xi,\eta,\zeta)} d\xi d\eta d\zeta
+\end{equation}
+\begin{proof}
+首先证明$\nabla \cdot \v{A}=0$,记$\nabla$是关于$(x,y,z)$求梯度，而$\nabla'$是关于$\xi,\eta,\zeta$求梯度，于是有：
+\begin{align*}
+\nabla \cdot \v{A} =& \frac{1}{4\pi} \iiint\limits_D \v{\Omega}(\xi,\eta,\zeta)\cdot \nabla(\frac{1}{R}) d\xi d\eta d\zeta\\
+=&-\frac{1}{4\pi} \iiint\limits_D \v{\Omega}(\xi,\eta,\zeta)\cdot \nabla'(\frac{1}{R}) d\xi d\eta d\zeta\\
+=&-\frac{1}{4\pi} \iiint\limits_D \nabla'\cdot(\frac{\v{\Omega}}{R}) d\xi d\eta d\zeta \footnotemark\\
+=&-\frac{1}{4\pi} \iint\limits_{\partial D} \frac{\v{\Omega}\cdot \v{n}}{R} dS\\
+=&0\,\,(\text{由式}\eqref{eq:31supp})
+\end{align*}
+另一方面，与\eqref{eq:31similar}式类似，由基本解与$\Omega$做卷积得到:
+\begin{equation}
+-\nabla\cdot(\nabla \v{A})=\v{\Omega}
+\end{equation}
+从而我们得到了\eqref{eq:31AAA}式的一个特解。
+\end{proof}
+因此对于无散有旋的情形(\ref{eq:311t3}.b),我们得到速度场为：
+\begin{align}
+\v{v_V}=&\frac{1}{4\pi} \iiint\limits_D \nabla(\frac{1}{R}) \times \v{\Omega} d\xi d\eta d\zeta\\
+=&\frac{1}{4\pi} \iiint\limits_D  \frac{\v{\Omega} \times \v{R}}{R^3}d\xi d\eta d\zeta \label{eq:31biotsavart}
+\end{align}
+以\textbf{直线涡诱导的速度场}为例，考虑一空间涡量场为:
+\begin{equation}
+\v{\Omega}\cdot \v{k}=\begin{cases}
+\infty, & (0,0,z)\\
+0, & \text{otherwise}
+\end{cases}
+\end{equation}
+其余两个方向分量为零，并且涡通量为常数$\Gamma$,即对于区域$A_{\epsilon}(k)=\{(x,y,z)|x^2+y^2<\epsilon,z=k\}$,有
+\begin{equation}
+\iint\limits_{A_{\epsilon}(k)} \v{\Omega}\cdot \v{n} dS=\Gamma
+\end{equation}
+可以求出上述直线涡产生的速度场沿$z$轴方向不变，对于其$x,y$平面内的速度场，与式(\ref{eq:31example}.b)描述的相同。
+下面用\eqref{eq:31biotsavart}式直接求该速度场，这里$D=\mathbb{R}^3$,代表全空间：
+\begin{align*}
+\v{v_V}=&\frac{1}{4\pi} \iiint\limits_D  \frac{\v{\Omega} \times \v{R}}{R^3}d\xi d\eta d\zeta, \,\,\text{化为累次积分，先算}\xi,\eta\\
+=&\frac{1}{4\pi} \int_{\mathbb{R}}(\iint\limits_{A_{\epsilon}(\zeta)}\frac{\v{\Omega} \times \v{R}}{R^3}d\xi d\eta )d\zeta, \,\,\epsilon\text{ 可任意小}\\
+=&\frac{1}{4\pi} \int_{\mathbb{R}}\left(\frac{\Gamma \v{k}\times \v{R'}}{R'^3}\right)d\zeta, R'=R(x,y,z;0,0,\zeta)\\
+=&\frac{\Gamma}{4\pi} \int_{\mathbb{R}}\left(\frac{x\v{j}-y\v{i}}{(x^2+y^2+(z-\zeta)^2)^{\frac{3}{2}}}\right)d\zeta\\
+=&\frac{\Gamma}{2\pi}\frac{-y\v{i}+x\v{j}}{x^2+y^2}\\
+\end{align*}
+

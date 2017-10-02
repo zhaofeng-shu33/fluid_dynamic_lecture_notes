@@ -1,0 +1,150 @@
+\textbf{迹线}
+
+某一流体质点的运动轨迹,其轨迹方程为常微分方程组$\frac{d \v{x}}{d t}=\v{v}$,
+$\v{x}$为流体质点在$t$时刻的位置，同时也依赖于初始位置$\v{x_0}$(常微分方程组初值);$\v{v}=u\v{i}+v\v{j}+w\v{k}$为速度场，
+每个分量都是空间位置和时间$t$的函数，
+常微分方程组写成分量的形式为：
+\begin{equation}\label{eq:22tr}
+\begin{cases}
+\frac{dx}{dt}=&u(x,y,z,t)\\
+\frac{dy}{dt}=&v(x,y,z,t)\\
+\frac{dz}{dt}=&w(x,y,z,t)
+\end{cases}
+\end{equation}
+如对于如下的速度场
+\begin{equation}\label{eq:w220}
+(u,v,w)=(\frac{x}{1+t},y,z)
+\end{equation}
+$t=0$时初值条件为$(x,y,z)=(1,1,1)$，可直接求出上述常微分方程(ODE)有唯一解:
+\begin{equation}
+\begin{cases}
+x=&1+t\\
+y=&e^t\\
+z=&1
+\end{cases}
+\end{equation}
+这是关于$t$的参数曲线，可以通过消元得到$y=e^{x-1},z=1$,这是用空间两个曲面的交线表示曲线的方法。
+
+\textbf{流线}
+
+数学定义为
+\begin{equation}
+\frac{d \v{x}(s)}{d s}\times \v{v} =\v{0}
+\end{equation}
+上述定义在给定速度场后描述了空间这样一簇曲线，每条曲线每点的切线方向与该点的速度场方向一致。
+使用向量外积的定义得到等价的定义形式
+\begin{equation}\label{eq:2222st}
+\frac{dx}{u(x,y,z,t)}=\frac{dy}{v(x,y,z,t)}=\frac{dz}{w(x,y,z,t)}
+\end{equation}
+这里时间$t$是常数。
+上述方程如取$x$为自变量,可得到关于$(y(x),z(x))$的常微分方程组。
+比如对$t=0$时刻\eqref{eq:w220}式给出的速度场为$(u,v,w)=(x,y,z)$,求过$(1,1,1)$点的流线即解ODE：
+\begin{equation}
+\begin{cases}
+\frac{dy}{dx}=&\frac{y}{x}\\
+\frac{dz}{dx}=&\frac{z}{x}
+\end{cases}
+\end{equation}
+初值条件是$y(1)=1,z(1)=1$，从而有唯一解$y=x,z=x$。
+可以看出，对同一个流场，流线和迹线是不同的。
+
+但对于定常流，即$\bm{v}$不随时间变化，流线簇和迹线簇重合。比如考虑平面流场$(u,v)=(ax,-ay)$,
+\eqref{eq:22tr}给出曲线簇$x=c_1e^{at},y=c_2e^{-at}$,\eqref{eq:2222st}给出曲线簇$xy=c$,它们表示同一曲线簇。
+
+其他概念:
+
+脉线、时间线、流管、流体线、流体面
+
+\textbf{流体微团}
+
+
+考虑一流体微团（系统）研究其变形规律：
+\begin{figure}[!ht]
+\def\svgwidth{8cm}
+\centering
+\input{deformation.eps_tex}
+\caption{xz平面矩形的变形}\label{fig:221}
+\end{figure}
+由图\ref{fig:221}可以看到，$\v{OO'}+\v{O'B'}=\v{OB}+\v{BB'}$,
+所以
+\begin{align}\label{eq:22221}
+\v{O'B'}=&\v{OB}+\v{BB'}-\v{OO'}\nonumber\\
+=&\Delta x \v{i}+\v{v_B}\Delta t - \v{v_O} \Delta t
+\end{align}
+又
+\begin{align*}
+\v{v_B}=&\v{v}(x+\Delta x,y,z,t)\\
+\v{v_O}=&\v{v}(x,y,z,t)
+\end{align*}
+所以\eqref{eq:22221}式化为：
+\begin{equation}
+\v{O'B'}=\Delta x \v{i} + \Delta x\Delta t \frac{\partial \v{v}}{\partial x}
+\end{equation}
+进一步设速度场$\v{v}=(u,v,w)$,则上式在直角坐标系下为:
+\begin{equation}\label{eq:222}
+\v{O'B'}=[(1+\frac{\partial u}{\partial x}\Delta t)\v{i}+\frac{\partial v}{\partial x}\Delta t\v{j}+\frac{\partial w}{\partial x}\Delta t\v{k}]\Delta x
+\end{equation}
+同样的方法可求出$\v{C'D'}$:
+\begin{align*}
+\v{C'D'}=&\v{CD}+\v{DD'}-\v{CC'}\\
+=&\Delta x\v{i}+[\v{v}(x+\Delta x,y,z+\Delta z,t)-\v{v}(x,y,z+\Delta z,t)]\Delta t\\
+=&\Delta x \v{i} +  \Delta x\Delta t \frac{\partial \v{v}}{\partial x}\\
+\Rightarrow & \v{O'B'}=\v{C'D'}
+\end{align*}
+所以正六面体流体微团的微小变形后仍是平行六面体，其变形后的体积可用平行六面体体积公式求得。
+
+设变形前正六面体由自$O'$出发的向量$\v{OA}=\Delta y\v{j},\v{OB}=\Delta x \v{i},\v{OC}=\Delta z \v{k}$张成，
+变形后的六面体由自$O'$出发的向量$\v{O'A'},\v{O'B'},\v{O'C'}$张成，
+对$xy,yz$两个表面类似的分析可以得到与\eqref{eq:222}类似的式子：
+\begin{align*}
+\v{O'C'}=&[\frac{\partial u}{\partial z}\Delta t\v{i}+\frac{\partial v}{\partial z}\Delta t\v{j}+(1+\frac{\partial w}{\partial z}\Delta t\v{k})]\Delta z\\
+\v{O'A'}=&[\frac{\partial u}{\partial y}\Delta t\v{i}+(1+\frac{\partial v}{\partial y}\Delta t\v{j})+\frac{\partial w}{\partial y}\Delta t\v{k}]\Delta y
+\end{align*}
+变形前正六面体体积$\Delta \tau (t)=\Delta x\Delta y\Delta z$,
+经过$\Delta t$时间变形后六面体体积使用混合积公式\cite{mixedProduct}并略去高阶小为：
+\begin{equation}
+\Delta \tau (t+\Delta t)=[1+(\frac{\partial \v{u}}{\partial x}+\frac{\partial \v{v}}{\partial y}+\frac{\partial \v{w}}{\partial z})\Delta t]\Delta x\Delta y\Delta z
+\end{equation}
+定义流体微团的瞬时\textbf{体膨胀率}为单位体积变化的速率，即
+\begin{equation}
+\Delta \tau'(t)=\lim_{\Delta t \to 0} \frac{\Delta \tau (t+\Delta t)-\Delta \tau (t)}{\Delta \tau (t)\Delta t}
+\end{equation}
+于是可以得到体膨胀率为$\nabla \cdot \v{v}$,为速度场的散度。当速度场的散度处处为0时，流体为不可压缩流体，变形前后体积不变。
+
+类似的有\textbf{线变形率}的定义，对于$x$方向为：
+\begin{equation}
+\lim_{\Delta t \to 0} \frac{|\v{O'B'}|-|\v{OB}|}{|\v{OB}|\Delta t}
+\end{equation}
+其中使用Taylor 近似从\eqref{eq:222}式出发有:$|\v{O'B'}|\approx (1+\frac{\partial u}{\partial x}\Delta t)\Delta x$
+于是可以求得$x$方向的线变形率为$\frac{\partial u}{\partial x}$，进而得到体膨胀率为三个方向线变形率之和的结论。
+
+
+\textbf{流体的旋转角度}
+
+对于流体绕$y$轴的旋转角度定义为$\v{O'B'}$相对于$\v{OB}$转过的角度与$\v{O'C'}$相对于$\v{OC}$转过的角度的平均值。
+由于转角$\alpha$很小，有近似$\tan \alpha\approx \alpha$,所以由\eqref{eq:222}式
+\begin{align*}
+\measuredangle \left< \v{O'B'},\v{OB} \right>=&\frac{\frac{\partial w}{\partial x}\Delta t}{1+\frac{\partial u}{\partial x}\Delta t}\\
+\approx & \frac{\partial w}{\partial x}\Delta t (1-\frac{\partial u}{\partial x}\Delta t)
+\end{align*}
+略去二阶小$(\Delta t)^2$即得到图中的$\alpha_1=\frac{\partial w}{\partial x}$,
+因为顺时针方向为负，所以转角为$-\alpha_1$。同理求出图中的$\alpha_2=\frac{\partial u}{\partial z}$
+所以流体绕$y$轴的旋转角度为
+\begin{align}
+\omega_y=&\frac{\alpha_2-\alpha_1}{2\Delta t}\nonumber\\
+=&\frac{1}{2}(\frac{\partial u}{\partial z}-\frac{\partial w}{\partial x})
+\end{align}
+
+\textbf{流体的角变形率}
+
+对于流体在$xz$平面的角变形率:
+\begin{align}
+\epsilon_{xz}=&\frac{\alpha_2+\alpha_1}{2\Delta t}\nonumber\\
+=&\frac{1}{2}(\frac{\partial u}{\partial z}+\frac{\partial w}{\partial x})
+\end{align}
+% $S(V)$是流体微团变形后的表面，由Stokes公式:
+% \[
+% DV=\iiint\limits_{V}(\nabla \cdot \bm{u}Dt) dV
+% \]
+% 变形后的新体积
+% 随时间的变化为$\frac{Dv}{Dt}$,

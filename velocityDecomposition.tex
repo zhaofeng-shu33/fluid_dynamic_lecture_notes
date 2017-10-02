@@ -1,0 +1,26 @@
+%LaTeX with PSTricks extensions
+%%Creator: inkscape 0.92.2
+%%Please note this file requires PSTricks extensions
+%\documentclass{article}
+%\pagestyle{empty}
+%\usepackage{pstricks-add}
+%\begin{document}
+%\begin{figure}
+\begin{pspicture}(0,0)(5,5)
+%spatial axis xyz
+\psline{->}(2,2)(2,4)
+\psline{->}(2,2)(4,2)
+\psline{->}(2,2)(1,1)
+\rput(2,4){$y$}
+\rput(4,2){$x$}
+\rput(1,1){$z$}
+% fluid particle pos
+\psline{->}(2,2)(3.2,2.7)
+\psline{->}(3.2,2.7)(3.8,3)
+\rput[b](3.1,2.7){$O$}
+\rput[b](3.9,3){$A$}
+\rput[b](3.5,2.85){$\delta \v{x}$}
+\rput[b](2.6,2.35){$\v{x}$}
+\end{pspicture}
+%\end{figure}
+%\end{document}

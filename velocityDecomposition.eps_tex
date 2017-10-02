@@ -1,0 +1,62 @@
+%% Creator: Inkscape inkscape 0.92.2, www.inkscape.org
+%% PDF/EPS/PS + LaTeX output extension by Johan Engelen, 2010
+%% Accompanies image file 'velocityDecomposition.eps' (pdf, eps, ps)
+%%
+%% To include the image in your LaTeX document, write
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics{<filename>.pdf}
+%% To scale the image, write
+%%   \def\svgwidth{<desired width>}
+%%   \input{<filename>.pdf_tex}
+%%  instead of
+%%   \includegraphics[width=<desired width>]{<filename>.pdf}
+%%
+%% Images with a different path to the parent latex file can
+%% be accessed with the `import' package (which may need to be
+%% installed) using
+%%   \usepackage{import}
+%% in the preamble, and then including the image with
+%%   \import{<path to file>}{<filename>.pdf_tex}
+%% Alternatively, one can specify
+%%   \graphicspath{{<path to file>/}}
+%% 
+%% For more information, please see info/svg-inkscape on CTAN:
+%%   http://tug.ctan.org/tex-archive/info/svg-inkscape
+%%
+\begingroup%
+  \makeatletter%
+  \providecommand\color[2][]{%
+    \errmessage{(Inkscape) Color is used for the text in Inkscape, but the package 'color.sty' is not loaded}%
+    \renewcommand\color[2][]{}%
+  }%
+  \providecommand\transparent[1]{%
+    \errmessage{(Inkscape) Transparency is used (non-zero) for the text in Inkscape, but the package 'transparent.sty' is not loaded}%
+    \renewcommand\transparent[1]{}%
+  }%
+  \providecommand\rotatebox[2]{#2}%
+  \ifx\svgwidth\undefined%
+    \setlength{\unitlength}{255.11811024bp}%
+    \ifx\svgscale\undefined%
+      \relax%
+    \else%
+      \setlength{\unitlength}{\unitlength * \real{\svgscale}}%
+    \fi%
+  \else%
+    \setlength{\unitlength}{\svgwidth}%
+  \fi%
+  \global\let\svgwidth\undefined%
+  \global\let\svgscale\undefined%
+  \makeatother%
+  \begin{picture}(1,0.88888889)%
+    \put(0,0){\includegraphics[width=\unitlength]{velocityDecomposition.eps}}%
+    \put(0.12472574,0.08315059){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Z}}}%
+    \put(0.91851804,0.39572587){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{X}}}%
+    \put(0.37803969,0.81147853){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{Y}}}%
+    \put(0.46326715,0.48405476){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{xv}}}%
+    \put(0.74538504,0.61175031){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{dx}}}%
+    \put(0.62659859,0.54641777){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{}}}%
+    \put(0.59987163,0.58205365){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{O}}}%
+    \put(0.88895787,0.65717996){\color[rgb]{0,0,0}\makebox(0,0)[lb]{\smash{A}}}%
+  \end{picture}%
+\endgroup%
