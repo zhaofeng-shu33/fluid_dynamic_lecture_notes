@@ -1,0 +1,67 @@
+
+下面我们针对两组假设条件下的能量守恒积分方程进行化简：
+第一组假设
+\begin{itemize}
+\item 理想流体，即表面力为 $T_n=-p \v{n}$
+\item 有势场，即存在标量函数$\Pi$, 使得$\v{f}=-\nabla \Pi$
+\item 绝热
+\item 定常流，即流体任意物理量$Q$只与空间坐标有关，与时间无关，
+满足$\frac{\partial Q}{\partial t}=0$
+\end{itemize}
+
+在第一组假设下，能量守恒积分方程可化为
+\begin{equation}\label{eq:42energy}
+\oiint\limits_{\Sigma} \rho (e+\frac{1}{2}|\v{v}|^2)\v{v}\cdot\v{n} dA +
+\iiint\limits_{D} \rho (\nabla \Pi)\cdot \v{v} d\tau 
++ \oiint\limits_{\Sigma} p \v{n}\cdot\v{v}dA=0
+\end{equation}
+我们尝试把上式第二项的体积分化为面积分，为此用到：
+\begin{align*}
+\rho (\nabla \Pi)\cdot \v{v} = & \nabla \cdot (\Pi \rho \v{v}) - \Pi \nabla \cdot(\rho \v{v})\\
+= & \nabla \cdot (\Pi \rho \v{v}) \quad \text{定常流的连续性方程}
+\end{align*}
+因此我们得到
+\begin{equation}
+\oiint\limits_{\Sigma} \rho[\Pi + \frac{p}{\rho} + e + \frac{1}{2} |\v{v}|^2](\v{v}\cdot \v{n})dA=0
+\end{equation}
+上式中第一项$\Pi$表示体积势的贡献，第二项和第三项之和表示焓（内能与压力势之和），最后一项表示动能。
+
+如果我们取$D$是一个流管,如图\ref{fig:412}所示，侧面积分为零，因此我们有
+\begin{equation}
+\oiint\limits_{A_1} \rho[\Pi + \frac{p}{\rho} + e + \frac{1}{2} |\v{v}|^2](\v{v}\cdot \v{n})dA=
+-\oiint\limits_{A_2} \rho[\Pi + \frac{p}{\rho} + e + \frac{1}{2} |\v{v}|^2](\v{v}\cdot \v{n})dA
+\end{equation}
+假设面积$A_1,A_2$很小流动可以看作均匀的，从而
+\begin{equation}
+\rho[\Pi_1 + \frac{p_1}{\rho_1} + e_1 + \frac{1}{2} |\v{v_1}|^2](\v{v_1}\cdot \v{n_1})A_1=
+-\rho[\Pi_2 + \frac{p_2}{\rho_2} + e_2 + \frac{1}{2} |\v{v_2}|^2](\v{v_2}\cdot \v{n_2})A_2
+\end{equation}
+代入微元流管的连续性方程
+$\rho(\v{v}\cdot \v{n})A_1=-\rho(\v{v}\cdot \v{n})A_2$,我们得到
+\begin{equation}
+\Pi_1 + \frac{p_1}{\rho_1} + e_1 + \frac{1}{2} |\v{v_1}|^2 = \Pi_2 + \frac{p_2}{\rho_2} + e_2 + \frac{1}{2} |\v{v_2}|^2
+\end{equation}
+因此沿流线，我们得到第一组假设下的Bernoulli方程
+\begin{equation}
+\Pi + \frac{p}{\rho} + e + \frac{1}{2} |\v{v}|^2=c
+\end{equation}
+第二组假设
+\begin{itemize}
+\item 理想流体，即表面力为 $T_n=-p \v{n}$
+\item 有势场，即存在标量函数$\Pi$, 使得$\v{f}=-\nabla \Pi$
+\item 不可压缩条件，即流体微团体积不随时间变化 $\frac{D \rho}{D t}=0$
+\item 定常流，即流体任意物理量$Q$只与空间坐标有关，与时间无关，满足$\frac{\partial Q}{\partial t}=0$
+\end{itemize}
+在第二组假设下，由于体膨胀作功的部分为零，由热力学第一定律，内能的变化只与热交换有关，
+因此在能量守恒方程中我们可以将内能与热交换项分离出来，从而得到\eqref{eq:42energy}式，但此时$e=0$,
+类似的化简得到在第二组假设下的Bernoulli方程
+\begin{equation}
+\Pi + \frac{p}{\rho} + \frac{1}{2} |\v{v}|^2 = c
+\end{equation}
+进一步假设有势场是重力场，即$\Pi=gz$,$z$代表高度方向坐标，则得到Bernoulli方程的常用形式：
+\begin{equation}
+gz + \frac{p}{\rho} + \frac{1}{2} |\v{v}|^2 = c
+\end{equation}
+
+\begin{equation}
+\end{equation}
