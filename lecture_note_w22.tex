@@ -1,4 +1,9 @@
-\textbf{迹线}
+\newglossaryentry{pathlines}
+{
+  name=迹线,
+  description={某一流体质点的运动轨迹}
+}
+\textbf{\gls{pathlines}}
 
 某一流体质点的运动轨迹,其轨迹方程为常微分方程组$\frac{d \v{x}}{d t}=\v{v}$,
 $\v{x}$为流体质点在$t$时刻的位置，同时也依赖于初始位置$\v{x_0}$(常微分方程组初值);$\v{v}=u\v{i}+v\v{j}+w\v{k}$为速度场，
@@ -25,7 +30,12 @@ z=&1
 \end{equation}
 这是关于$t$的参数曲线，可以通过消元得到$y=e^{x-1},z=1$,这是用空间两个曲面的交线表示曲线的方法。
 
-\textbf{流线}
+\newglossaryentry{streamlines}
+{
+  name=流线,
+  description={曲线上每点的切线方向与该点的速度场方向一致}
+}
+\textbf{\gls{streamlines}}
 
 数学定义为
 \begin{equation}

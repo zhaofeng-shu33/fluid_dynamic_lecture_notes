@@ -16,7 +16,7 @@ $\bm{S}=[s_{ij}]=\frac{1}{2}\left(\Delta \v{v}+(\Delta \v{v})^{\mathrm{T}}\right
 
 \begin{figure}[!ht]%I can not compile this pstricks figure on my pC
 \centering
-%\input{velocityDecomposition.tex}
+\input{velocityDecomposition.tex}
 \caption{流体质点从$O$点经$\Delta t$时间运动到$A$点}\label{fig:311}
 \end{figure}
 
@@ -33,8 +33,12 @@ Helmholz 速度分解定理,参考图\ref{fig:311},有：
 \bm{\Omega} \v{x}= \v{\omega}\times \v{x} \cite{angularVelocityTensor}
 \end{equation}
 
-
-\textbf{涡量(vortex)}
+\newglossaryentry{vortex}
+{
+  name=涡量,
+  description={速度场的旋量}
+}
+\textbf{\gls{vortex}}
 
 定义为:$\v{\Omega}=\nabla \times \v{v}=2\v{\omega}$，其散度为零。
 

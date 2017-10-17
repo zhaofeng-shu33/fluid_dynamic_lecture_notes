@@ -1,12 +1,26 @@
 
 下面我们针对两组假设条件下的能量守恒积分方程进行化简：
 第一组假设
+\newglossaryentry{idealFluid}
+{
+  name=理想流体,
+  description={表面力$T_n=-p \v{n}$}
+}
+\newglossaryentry{potentialField}
+{
+  name=有势场,
+  description={存在标量函数$\Pi$, 使得$\v{f}=-\nabla \Pi$}
+}
+\newglossaryentry{steadyFlow}
+{
+  name=定常流,
+  description={流体任意物理量$Q$只与空间坐标有关而与时间无关，满足$\frac{\partial Q}{\partial t}=0$}
+}
 \begin{itemize}
-\item 理想流体，即表面力为 $T_n=-p \v{n}$
-\item 有势场，即存在标量函数$\Pi$, 使得$\v{f}=-\nabla \Pi$
+\item \gls{idealFluid}，\glsdesc{idealFluid}
+\item \gls{potentialField}，\glsdesc{potentialField}
 \item 绝热
-\item 定常流，即流体任意物理量$Q$只与空间坐标有关，与时间无关，
-满足$\frac{\partial Q}{\partial t}=0$
+\item \gls{steadyFlow}，\glsdesc{steadyFlow}
 \end{itemize}
 
 在第一组假设下，能量守恒积分方程可化为
@@ -46,11 +60,16 @@ $\rho(\v{v}\cdot \v{n})A_1=-\rho(\v{v}\cdot \v{n})A_2$,我们得到
 \Pi + \frac{p}{\rho} + e + \frac{1}{2} |\v{v}|^2=c
 \end{equation}
 第二组假设
+\newglossaryentry{uncompressibleCondition}
+{
+  name=不可压缩条件,
+  description={流体微团体积不随时间变化，满足$\frac{D \rho}{D t}=0$}
+}
 \begin{itemize}
-\item 理想流体，即表面力为 $T_n=-p \v{n}$
-\item 有势场，即存在标量函数$\Pi$, 使得$\v{f}=-\nabla \Pi$
-\item 不可压缩条件，即流体微团体积不随时间变化 $\frac{D \rho}{D t}=0$
-\item 定常流，即流体任意物理量$Q$只与空间坐标有关，与时间无关，满足$\frac{\partial Q}{\partial t}=0$
+\item \gls{idealFluid}
+\item \gls{potentialField}
+\item \gls{uncompressibleCondition}，\glsdesc{uncompressibleCondition}
+\item \gls{steadyFlow}
 \end{itemize}
 在第二组假设下，由于体膨胀作功的部分为零，由热力学第一定律，内能的变化只与热交换有关，
 因此在能量守恒方程中我们可以将内能与热交换项分离出来，从而得到\eqref{eq:42energy}式，但此时$e=0$,

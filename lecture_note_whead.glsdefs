@@ -1,0 +1,210 @@
+\ifglsentryexists{pathlines}{}%
+{%
+\gls@defglossaryentry{pathlines}%
+{%
+name={迹线},%
+sort={迹线},%
+type={main},%
+first={迹线},%
+firstplural={迹线s},%
+text={迹线},%
+plural={迹线s},%
+description={某一流体质点的运动轨迹},%
+descriptionplural={某一流体质点的运动轨迹},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{streamlines}{}%
+{%
+\gls@defglossaryentry{streamlines}%
+{%
+name={流线},%
+sort={流线},%
+type={main},%
+first={流线},%
+firstplural={流线s},%
+text={流线},%
+plural={流线s},%
+description={曲线上每点的切线方向与该点的速度场方向一致},%
+descriptionplural={曲线上每点的切线方向与该点的速度场方向一致},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{vortex}{}%
+{%
+\gls@defglossaryentry{vortex}%
+{%
+name={涡量},%
+sort={涡量},%
+type={main},%
+first={涡量},%
+firstplural={涡量s},%
+text={涡量},%
+plural={涡量s},%
+description={速度场的旋量},%
+descriptionplural={速度场的旋量},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{idealFluid}{}%
+{%
+\gls@defglossaryentry{idealFluid}%
+{%
+name={理想流体},%
+sort={理想流体},%
+type={main},%
+first={理想流体},%
+firstplural={理想流体s},%
+text={理想流体},%
+plural={理想流体s},%
+description={表面力$T_n=-p \v {n}$},%
+descriptionplural={表面力$T_n=-p \v {n}$},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{potentialField}{}%
+{%
+\gls@defglossaryentry{potentialField}%
+{%
+name={有势场},%
+sort={有势场},%
+type={main},%
+first={有势场},%
+firstplural={有势场s},%
+text={有势场},%
+plural={有势场s},%
+description={存在标量函数$\Pi $, 使得$\v {f}=-\nabla \Pi $},%
+descriptionplural={存在标量函数$\Pi $, 使得$\v {f}=-\nabla \Pi $},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{steadyFlow}{}%
+{%
+\gls@defglossaryentry{steadyFlow}%
+{%
+name={定常流},%
+sort={定常流},%
+type={main},%
+first={定常流},%
+firstplural={定常流s},%
+text={定常流},%
+plural={定常流s},%
+description={流体任意物理量$Q$只与空间坐标有关，与时间无关},%
+descriptionplural={流体任意物理量$Q$只与空间坐标有关，与时间无关},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{uncompressibleCondition}{}%
+{%
+\gls@defglossaryentry{uncompressibleCondition}%
+{%
+name={不可压缩条件},%
+sort={不可压缩条件},%
+type={main},%
+first={不可压缩条件},%
+firstplural={不可压缩条件s},%
+text={不可压缩条件},%
+plural={不可压缩条件s},%
+description={流体微团体积不随时间变化，满足$\frac {D \rho }{D t}=0$},%
+descriptionplural={流体微团体积不随时间变化，满足$\frac {D \rho }{D t}=0$},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
