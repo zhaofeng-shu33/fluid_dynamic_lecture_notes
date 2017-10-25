@@ -1,0 +1,99 @@
+
+理想流体运动的基本方程
+理想流体应力张量$T_{ij}=-p\delta_{ij}$，因此动量方程\eqref{eq:52Momen}式化为:
+\begin{equation}\label{eq:62EulerEq}
+ \frac{\partial \v{v}}{\partial t}+\v{v}\cdot\nabla\v{v}=\v{f}-\frac{1}{\rho}\nabla\cdot p
+\end{equation}
+\eqref{eq:62EulerEq}式即欧拉方程，
+相应的\eqref{eq:52Energy}化为
+\begin{equation}\label{eq:62IdealEnergy}
+ \frac{D(e+\frac{1}{2}|\v{v}|^2)}{Dt}=
+ \v{f}\cdot\v{v}-\frac{1}{\rho}\nabla\cdot(p\v{v})+(\dot{q}+q_R) 
+\end{equation}
+
+综合连续性方程\eqref{eq:52Conti}式,\eqref{eq:62EulerEq},\eqref{eq:52Energy}
+共5个方程，但未知数有$\v{v},e,p,\rho\,$ 6个，因此需补充热力学方程才能使方程组封闭。
+
+实际上，我们可以通过动量方程\eqref{eq:62EulerEq}式得到动能的变化率:
+\begin{equation}\label{eq:62KinematicEneryChangeRate}
+\frac{D}{D t}(\frac{1}{2}|\v{v}|^2)=\v{f}\cdot \v{v}-\frac{1}{\rho}\v{v}\cdot\nabla p
+\end{equation}
+将\eqref{eq:62IdealEnergy}式与\eqref{eq:62KinematicEneryChangeRate}作差得:
+\begin{align}
+\frac{De}{Dt}= & -\frac{p}{\rho} \nabla \cdot \v{v} + \dot{q}+q_R ,\text{by }\eqref{eq:52ContiMaterial}\nonumber\\
+=& \frac{p}{\rho^2}\frac{D\rho}{Dt} + \dot{q}+q_R \nonumber\\
+=& -p\frac{D}{Dt}\left(\frac{1}{\rho}\right) + \dot{q}+q_R\label{eq:62DeDt1}
+\end{align}
+定义$i=e+\frac{p}{\rho}$为气体的焓，则可以得到
+\begin{equation}
+\frac{D i}{D t}=\dot{q}+q_R + \frac{1}{\rho} \frac{D p }{D t}
+\end{equation}
+对于绝热状态下的理想常比热完全气体，我们有
+\begin{align}
+\frac{D e}{D t}=& C_V \frac{D T}{D t},e=C_V T\nonumber\\
+=& \frac{C_V}{R} \frac{D}{D t}\left(\frac{p}{\rho}\right),p=\rho RT\nonumber\\
+=& \frac{1}{\gamma -1} \frac{D}{D t}\left(\frac{p}{\rho}\right),C_P-C_V=R,\frac{C_P}{C_V}=\gamma \label{eq:62DeDt2}
+\end{align}
+将\eqref{eq:62DeDt1}式去掉产热项，与\eqref{eq:62DeDt2}式结合可以得到
+\begin{equation}\label{eq:62prho}
+\frac{D}{D t}\left(\frac{p}{\rho^{\gamma}}\right)=0
+\end{equation}
+\eqref{eq:62prho}式即为对于气体补充的$\rho$和$p$的关系的热力学方程。
+
+对于匀质不可压缩的液体，补充$\nabla \cdot \v{v}=0$的方程，此时\eqref{eq:52Conti}式恒成立，动力学方程与热力学方程解耦，
+因此我们可以联立求解:
+\begin{align}\notag
+\nabla \cdot \v{v}=&0\\
+ \frac{\partial \v{v}}{\partial t}+\v{v}\cdot\nabla\v{v} =&\v{f}-\frac{1}{\rho}\nabla\cdot p
+\end{align}
+得到$\v{v},p$再代入能量方程求其他参量。
+
+下面考虑理想流体动力学偏微分方程的边界条件。一般的，对于不可穿透的壁面，流体的法向速度与壁面运动的法向速度相等，即满足:
+\begin{equation}
+(\v{v}_L\cdot \v{n})_{\Sigma}=(\v{v}_B\cdot \v{n})_{\Sigma}
+\end{equation}
+若$\Sigma$有曲面方程$F(x,y,z,t)=0$，则流体边界速度满足
+\begin{equation}
+\frac{\partial F}{\partial t} + \v{v_L} \cdot \nabla F=0
+\end{equation}
+此即\textbf{不可穿透条件}的一种提法;此外，我们还有无穷远条件等。
+
+\begin{equation}
+\end{equation}
+
+对于球坐标，基矢量随坐标变量的变化规律为\cite{Del}:
+\begin{align}
+\frac{\partial \v{e_r}}{\partial \theta}=&\v{e_{\theta}},\,\,  \frac{\partial \v{e_r}}{\partial \varphi}=\v{e_{\varphi}}\sin\theta\\
+\frac{\partial \v{e_{\theta}}}{\partial \theta}=&-\v{e_r},\,\,  \frac{\partial \v{e_{\theta}}}{\partial \varphi}=\v{e_{\varphi}}\cos\theta\\
+\frac{\partial \v{e_{\varphi}}}{\partial \varphi}=&-(\v{e_r}\sin\theta+\v{e_{\theta}}\cos\theta)
+\end{align}
+
+球坐标系下的梯度算子表示为:
+\begin{equation}
+\nabla = \frac{\partial }{\partial r} \v{e_r} + \frac{1}{r} \frac{\partial}{\partial \theta} \v{e_{\theta}}+
+\frac{1}{r\sin\theta}
+\frac{\partial }{\partial \varphi}\v{e_{\varphi}}
+\end{equation}
+
+因此球坐标系下对于矢量$\v{v}=v_r\v{e_r}+v_{\theta}\v{e_{\theta}}+v_{\varphi}\v{e_{\varphi}}$的散度为:
+\begin{align*}
+&(\frac{\partial }{\partial r} \v{e_r} + \frac{1}{r} \frac{\partial}{\partial \theta} \v{e_{\theta}}+\frac{1}{r\sin\theta}
+\frac{\partial }{\partial \varphi}\v{e_{\varphi}})\cdot (v_r\v{e_r}+v_{\theta}\v{e_{\theta}}+v_{\varphi}\v{e_{\varphi}}) =\\
+&\frac{\partial v_r}{\partial r}+\frac{1}{r}\frac{\partial v_{\theta}}{\partial \theta}+\frac{1}{r\sin\theta}
+\frac{\partial v_{\varphi}}{\partial \varphi} +\frac{v_r}{r}\frac{\partial \v{e_r}}{\partial \theta}\cdot \v{e_{\theta}}+
+(v_r\frac{\partial \v{e_r}}{\partial \varphi}+v_{\theta}\frac{\partial \v{e_{\theta}}}{\partial \varphi}+
+v_{\varphi}\frac{\partial \v{e_{\varphi}}}{\partial \varphi})\cdot \frac{\v{e_{\varphi}}}{r \sin\theta}\\
+=&\frac{\partial v_r}{\partial r}+\frac{1}{r}\frac{\partial v_{\theta}}{\partial \theta}+\frac{1}{r\sin\theta}
+\frac{\partial v_{\varphi}}{\partial \varphi} +\frac{v_r}{r}+
+(v_r\sin\theta+v_{\theta}\cos\theta)\frac{1}{r \sin\theta}\\
+=&\frac{\partial v_r}{\partial r}+\frac{1}{r}\frac{\partial v_{\theta}}{\partial \theta}+\frac{1}{r\sin\theta}
+\frac{\partial v_{\varphi}}{\partial \varphi} +\frac{2v_r}{r}+\frac{v_{\theta}\cos\theta}{r \sin\theta}
+\end{align*}
+所以
+\begin{equation}
+\nabla \cdot \v{v}=\frac{1}{r^2}\frac{\partial (r^2 v_r)}{\partial r}+
+\frac{1}{r\sin\theta}\frac{\partial (v_{\theta}\sin\theta)}{\partial \theta}+
+\frac{1}{r\sin\theta}\frac{\partial v_{\varphi}}{\partial \varphi} 
+\end{equation}
+\begin{equation}
+\end{equation}

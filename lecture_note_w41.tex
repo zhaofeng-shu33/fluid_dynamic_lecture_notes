@@ -63,7 +63,7 @@ Reynolds 输运公式中取$Q$为不同的物理量，可以将Lagrange观点下
 \frac{D}{Dt} \iiint\limits_{D^*(t)}\rho d\tau =0
 \end{equation}
 应用Reynolds输运公式得到，对于控制体的质量守恒方程为
-\begin{equation}
+\begin{equation}\label{eq:41Conti}
 \iiint\limits_{D}\frac{\partial \rho}{\partial t} d\tau = - \oiint\limits_{\Sigma} \rho \v{v}\cdot \v{n} dA
 \end{equation}
 即控制体内质量的变化等于从控制体表面流过的质量。
@@ -96,7 +96,7 @@ Reynolds 输运公式中取$Q$为不同的物理量，可以将Lagrange观点下
 \end{equation}
 应用Reynolds输运公式得到，对于控制体的动量守恒方程为
 
-\begin{equation}
+\begin{equation}\label{eq:41Momen}
 \iiint\limits_{D}\frac{\partial (\rho\v{v})}{\partial t} d\tau = - \oiint\limits_{\Sigma} (\v{v}\cdot \v{n})\rho \v{v} dA +
 \iiint\limits_{D^*(t)} \rho \v{f} d\tau + 
 \oiint\limits_{\Sigma^*(t)} \rho \v{T_n} dA
@@ -119,9 +119,9 @@ Reynolds 输运公式中取$Q$为不同的物理量，可以将Lagrange观点下
 
 
 \textbf{能量守恒积分方程}：令$Q=\rho(e+\frac{1}{2}|\v{v}|^2)$，$e$是单位质量流体的内能
-\begin{equation}
+\begin{equation}\label{eq:41Energy}
 \frac{D}{Dt}\iiint\limits_{D^*(t)} \rho(e+\frac{1}{2}|\v{v}|^2) d\tau = \iiint\limits_{D^*(t)} \rho \v{f}\cdot\v{v} d\tau + 
-\oiint\limits_{\Sigma^*(t)} \rho \v{T_n}\cdot\v{v} dA + \iiint\limits_{D^*(t)}\rho (\dot{q}+q_R)d\tau +
+\oiint\limits_{\Sigma^*(t)}  \v{T_n}\cdot\v{v} dA + \iiint\limits_{D^*(t)}\rho (\dot{q}+q_R)d\tau +
 \oiint\limits_{\Sigma^*(t)} \lambda \v{n}\cdot \nabla T dA
 \end{equation}
 应用Reynolds输运公式即可将上述方程改写为控制体的形式，这里略去。

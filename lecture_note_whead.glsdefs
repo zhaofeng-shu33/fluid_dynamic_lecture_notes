@@ -208,3 +208,33 @@ parent={},%
 %
 }%
 }%
+\ifglsentryexists{barotropic}{}%
+{%
+\gls@defglossaryentry{barotropic}%
+{%
+name={正压流体},%
+sort={正压流体},%
+type={main},%
+first={正压流体},%
+firstplural={正压流体s},%
+text={正压流体},%
+plural={正压流体s},%
+description={$\rho =\rho (p)$,即密度只与压力有关},%
+descriptionplural={$\rho =\rho (p)$,即密度只与压力有关},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%

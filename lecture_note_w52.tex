@@ -1,0 +1,177 @@
+
+流体动力学微分型方程的建立
+
+微分型方程在流场内部是逐点满足的，附加上流场的边界条件和初始条件，即可通过求解PDE的方法得到流场的各个参量。
+
+微分型方程可以通过积分型方程中将面积分通过Gauss公式化为体积分，利用积分区域的任意性得到被积函数逐点成立。
+
+1.连续方程，由\eqref{eq:41Conti}式可得到
+\begin{equation}
+\iiint\limits_D \left(\frac{\partial \rho}{\partial t}+\nabla\cdot(\rho \v{v})\right)d\tau=0
+\end{equation}
+从而得到
+\begin{equation}\label{eq:52Conti}
+ \frac{\partial \rho}{\partial t}+\nabla\cdot(\rho \v{v})=0
+\end{equation}
+或者写成
+\begin{equation}\label{eq:52ContiMaterial}
+ \frac{1}{\rho}\frac{D \rho}{D t}+\nabla\cdot\v{v}=0
+\end{equation}
+即密度增长率与体膨胀率之和为零。
+
+1.动量方程，由\eqref{eq:41Momen}式可得到
+
+\begin{equation}
+\iiint\limits_{D}\frac{\partial (\rho\v{v})}{\partial t} d\tau =- \oiint\limits_{\Sigma} (\rho\v{v}\v{v})\cdot \v{n} dA +
+\iiint\limits_{D} \rho \v{f} d\tau + 
+\oiint\limits_{\Sigma} \rho \bm{T}\cdot\v{n} dA
+\end{equation}
+上式中$\v{v}\v{v}$是并矢的写法，$\bm{T}$是应力张量，因此我们有
+\begin{equation}
+\iiint\limits_{D} \frac{\partial (\rho\v{v})}{\partial t}d\tau=
+\iiint\limits_{D} \left(\rho\v{f}+\nabla\cdot\bm{T}-\nabla\cdot(\rho\v{v}\v{v})\right)d\tau
+\end{equation}
+从而得到
+\begin{equation}
+ \frac{\partial (\rho\v{v})}{\partial t}=\rho\v{f}+\nabla\cdot\bm{T}-\nabla\cdot(\rho\v{v}\v{v})
+ \end{equation}
+利用$\nabla\cdot(\rho\v{v}\v{v})=\v{v}\nabla\cdot(\rho\v{v})+\rho\v{v}\cdot\nabla\v{v}$
+\footnote{
+LHS=$(\frac{\partial}{\partial x_i})\v{e_i}\cdot[\rho v_jv_k\v{e_j}\v{e_k}]
+=\frac{\partial}{\partial x_i}(\rho v_iv_k)\v{e_k}
+=\frac{\partial \rho v_i}{\partial x_i}v_k\v{e_k}+(\rho v_i)\frac{\partial \rho v_k}{\partial x_i}\v{e_k}
+=$RHS
+},
+可以进一步将上式化简为
+\begin{align}\notag
+ \rho\frac{\partial \v{v}}{\partial t}+\underbrace{\frac{\partial \rho}{\partial t}\v{v}+\v{v}\nabla\cdot(\rho\v{v})}_{\text{by eqn }\eqref{eq:52Conti}}+\rho\v{v}\cdot\nabla\v{v}=&\rho\v{f}+\nabla\cdot\bm{T}\\
+ \rho\frac{\partial \v{v}}{\partial t}+\rho\v{v}\cdot\nabla\v{v}=&\rho\v{f}+\nabla\cdot\bm{T}\label{eq:52Momen}
+ \end{align}
+或写成
+\begin{equation}
+\rho\frac{D \v{v}}{D t}=\rho \v{f} + \nabla \cdot \bm{T}
+\end{equation}
+由式\eqref{eq:41Energy}得到关于控制体的能量方程为：
+\begin{align}\notag
+\frac{\partial}{\partial t}\iiint\limits_{D} \rho(e+\frac{1}{2}|\v{v}|^2) d\tau =& \iiint\limits_{D} \rho \v{f}\cdot\v{v} d\tau + 
+\oiint\limits_{\Sigma}  \v{T_n}\cdot\v{v} dA + \iiint\limits_{D}\rho (\dot{q}+q_R)d\tau \\
++&\oiint\limits_{\Sigma} \lambda \v{n}\cdot \nabla T dA-\oiint\limits_{\Sigma}\rho(e+\frac{1}{2}|\v{v}|^2)(\v{v}\cdot\v{n})dA
+\end{align}
+面积分化为体积分得:
+\begin{align}\notag
+\frac{\partial}{\partial t}\iiint\limits_{D} \rho(e+\frac{1}{2}|\v{v}|^2) d\tau =& 
+\iiint\limits_{D} \rho \v{f}\cdot\v{v} d\tau + 
+\iiint\limits_{D}  \nabla\cdot(\v{T_n}\cdot\v{v}) d\tau + 
+\iiint\limits_{D}\rho (\dot{q}+q_R)d\tau \\
++&\iiint\limits_{D} \nabla\cdot(\lambda \v{n}\cdot \nabla T) d\tau-
+\iiint\limits_{D}\nabla\cdot(\rho(e+\frac{1}{2}|\v{v}|^2)\v{v})d\tau
+\end{align}
+因此有
+\begin{equation}
+\frac{\partial}{\partial t} \rho(e+\frac{1}{2}|\v{v}|^2)  =
+ \rho \v{f}\cdot\v{v}  + 
+\nabla\cdot(\v{T_n}\cdot\v{v})  + 
+\rho (\dot{q}+q_R) 
++\nabla\cdot(\lambda \v{n}\cdot \nabla T) -
+\nabla\cdot(\rho(e+\frac{1}{2}|\v{v}|^2)\v{v})
+\end{equation}
+利用连续性方程\eqref{eq:52Conti}进一步化简为：
+\begin{equation}\label{eq:52Energy}
+\rho \frac{D(e+\frac{1}{2}|\v{v}|^2)}{Dt}=\rho \v{f}\cdot\v{v}+\nabla\cdot(\bm{T}\cdot\v{v})+\rho(\dot{q}+q_R) +\nabla\cdot(\lambda \v{n}\cdot \nabla T)
+\end{equation}
+角动量守恒方程可以推出应力张量$\bm{T}$是对称张量，因此对于$\bm{T}$，未知量只有6个。
+
+上面方程(\ref{eq:52Conti},\ref{eq:52Momen},\ref{eq:52Energy})只有5个方程，但未知量有应力张量$\bm{T}$,速度场$\v{v}$，温度场$\theta$,内能$e$,密度$\rho$共12个未知量，
+因此需要补充物理方程才能达到定解条件。对于牛顿流体，物理方程指出应力张量与应变张量之间是线性关系:
+满足如下方程:
+\begin{equation}\label{eq:52TSG}
+T_{ij}=(-p+(\mu'-\frac{2}{3}\mu)\nabla\cdot \v{v})\delta_{ij}+2\mu S_{ij}
+ \end{equation}
+其中 $\bm{S}$是应变率张量,$S_{ij}=\frac{1}{2}(\frac{\partial v_i}{\partial x_j}+\frac{\partial v_j}{\partial x_i})$,
+$\mu$是流体的动力黏性系数(viscosity),而$\mu'$是第二黏性系数。
+
+上面补充了6个方程，但引入了一个新的变量，压强$p$,为此再补充两个热力学方程:
+\begin{align}
+e=&C_v\theta\\
+p=&\rho R\theta,\text{对液体通常满足不可压条件，即$\rho=$Const}
+ \end{align}
+ 这样方程与未知数的个数相等，在适当的边界条件下可以求解PDE。
+ 实际上对于一些特定的假设，可以适当减少方程和未知量的个数，下面针对均质不可压流做进一步化简。
+
+ 由于流体不可压，$\nabla\cdot\v{v}=0$,所以\eqref{eq:52TSG}式化简为$T_{ij}=-p\delta_{ij}+2\mu S_{ij}$,
+ 下面化简$\nabla\cdot \bm{T}$
+\begin{align*}
+\nabla\cdot \bm{T} = & (\frac{\partial}{\partial x_k}\v{e_k})\cdot(T_{ij}\v{e_i}\v{e_j})\\
+= & \frac{\partial T_{ij}}{\partial x_i}\v{e_j}\\
+= & \frac{\partial}{\partial x_i}(-p\delta_{ij}+2\mu S_{ij})\v{e_j}\\
+= & -\frac{\partial p}{\partial x_i}\v{e_i}+\mu \frac{\partial}{\partial x_i}(\frac{\partial v_i}{\partial x_j}+\frac{\partial v_j}{\partial x_i})\v{e_j}\\
+= & -\nabla p+\mu \frac{\partial^2 v_j}{\partial x_i^2}\v{e_j},\text{利用 }\nabla\cdot\v{v}=0\\
+= & -\nabla p+\mu \nabla^2 \v{v}
+\end{align*}
+ 将其代入动量方程 \eqref{eq:52Momen}式，并设外力场为重力场，得到均质不可压流的N-S方程：
+\begin{equation}
+\rho\frac{\partial \v{v}}{\partial t}+\rho\v{v}\cdot\nabla\v{v}=\rho\v{g}-\nabla p+\mu \nabla^2 \v{v}
+ \end{equation}
+ 下面推导其在柱坐标系下的表达式，此时
+ \begin{align}
+ \nabla^2=&\frac{\partial^2 }{\partial r^2}+\frac{1}{r}\frac{\partial}{\partial r}+
+ \frac{1}{r^2}\frac{\partial^2 }{\partial \theta^2}+\frac{\partial^2 }{\partial z^2}\\
+ \nabla=&\v{e_r}\frac{\partial}{\partial r}+\frac{\v{e_{\theta}}}{r}\frac{\partial}{\partial \theta }+\v{e_z}\frac{\partial}{\partial z}\label{eq:52nablacy}
+ \end{align}
+ 并利用$\frac{\partial \v{e_r}}{\partial \theta}=\v{e_{\theta}}$和$\frac{\partial \v{e_{\theta}}}{\partial \theta}=-\v{e_r}$
+于是可得
+ \begin{align*}
+ \nabla^2 \v{v} = & (\frac{\partial^2 }{\partial r^2}+\frac{1}{r}\frac{\partial}{\partial r}+
+ \frac{1}{r^2}\frac{\partial^2 }{\partial \theta^2}+\frac{\partial^2 }{\partial z^2})(v_r \v{e_r}+v_{\theta}\v{e_{\theta}}+v_z\v{e_z})\\
+=& (\nabla^2 v_r)\v{e_r}+(\nabla^2 v_{\theta})\v{e_{\theta}}+(\nabla^2 v_z)\v{e_z}+
+v_{\theta}(\frac{1}{r^2}\frac{\partial^2 }{\partial \theta^2})\v{e_{\theta}}+
+v_{r}(\frac{1}{r^2}\frac{\partial^2 }{\partial \theta^2})\v{e_r}\\
++&\frac{2}{r^2}\frac{\partial v_{\theta}}{\partial \theta}\frac{\partial \v{e_{\theta}}}{\partial \theta}
++\frac{2}{r^2}\frac{\partial v_r}{\partial \theta}\frac{\partial \v{e_r}}{\partial \theta}\\
+=& (\nabla^2 v_r)\v{e_r}+(\nabla^2 v_{\theta})\v{e_{\theta}}+(\nabla^2 v_z)\v{e_z}-
+\frac{v_{\theta}}{r^2}\v{e_{\theta}}-
+\frac{v_{r}}{r^2}\v{e_r}-\frac{2}{r^2}\frac{\partial v_{\theta}}{\partial \theta}\v{e_r}+
+\frac{2}{r^2}\frac{\partial v_r}{\partial \theta}\v{e_{\theta}}\\
+ \end{align*}
+ 另一方面
+ \begin{align*}
+ \v{v}\cdot\nabla \v{v} &= (v_r \v{e_r}+v_{\theta}\v{e_{\theta}}+v_z\v{e_z})
+ \cdot (\v{e_r}\frac{\partial}{\partial r}+\frac{\v{e_{\theta}}}{r}\frac{\partial}{\partial \theta }+\v{e_z}\frac{\partial}{\partial z})
+ (v_r \v{e_r}+v_{\theta}\v{e_{\theta}}+v_z\v{e_z})\\
+ =& \v{v}\cdot(\nabla v_r)\v{e_r}+\v{v}\cdot(\nabla v_{\theta})\v{e_{\theta}}+\v{v}\cdot(\nabla v_z)\v{e_z}+
+ \v{v}\cdot 
+ \frac{\v{e_{\theta}}}{r} (v_r \frac{\partial \v{e_r}}{\partial \theta }+v_{\theta}\frac{\partial \v{e_{\theta}}}{\partial \theta })\\
+ =& \v{v}\cdot(\nabla v_r)\v{e_r}+\v{v}\cdot(\nabla v_{\theta})\v{e_{\theta}}+\v{v}\cdot(\nabla v_z)\v{e_z}+
+ \frac{v_{\theta}}{r} (v_r \v{e_{\theta}}-v_{\theta}\v{e_r})
+ \end{align*}
+ 因此不可压的N-S方程在柱坐标下可以表示为
+ \begin{align}
+ \rho\left(\frac{\partial v_r}{\partial t}+\v{v}\cdot(\nabla v_r)-\frac{v_{\theta}^2}{r}\right)=&-\frac{\partial p}{\partial r}+
+ \mu (\nabla^2 v_r-\frac{v_r}{r^2}-\frac{2}{r^2}\frac{\partial v_{\theta}}{\partial \theta})\label{eq:52Radius}\\
+ \rho\left(\frac{\partial v_{\theta}}{\partial t}+\v{v}\cdot(\nabla v_{\theta})+\frac{v_{\theta}v_r}{r}\right)=&-\frac{1}{r}\frac{\partial p}{\partial {\theta}}+
+ \mu (\nabla^2 v_{\theta}-\frac{v_{\theta}}{r^2}+\frac{2}{r^2}\frac{\partial v_r}{\partial \theta})\\
+ \rho\left(\frac{\partial v_z}{\partial t}+\v{v}\cdot(\nabla v_z)\right)=&\rho g -\frac{\partial p}{\partial z}+ \mu \nabla^2 v_z
+ \end{align}
+ 下面给一个应用$\v{e_r}$方向的动量守恒方程解题的例子，考虑一截面为边长为$s$的正方形的圆环通道，中心线半径为$R$,如图\ref{fig:52C}所示。
+ 已知通道内外压差为$\Delta p$,
+ 且通道内速度场的分布为$\v{v}=\frac{A}{r}\v{e_{\theta}}$,$A$待定，求体积流量$Q$。
+ \begin{figure}[!ht]
+ \centering
+ \input{QuarterCircleFluidCapacity.tex}
+ \caption{圆环通道}\label{fig:52C}
+ \end{figure}
+ 
+ 由体积流量的定义有
+ \begin{align}
+ Q=&\int_{0}^s dz \int_{R-\frac{s}{2}}^{R+\frac{s}{2}} v_{\theta} dr\\
+ =& As\ln\frac{R+\frac{s}{2}}{R-\frac{s}{2}}\label{eq:52Cap}
+ \end{align}
+ 由式\eqref{eq:52Radius}得
+  \begin{equation}
+  \rho(-\frac{v^2_{\theta}}{r})=-\frac{\partial p}{\partial r}
+ \end{equation}
+ 沿径向积分得：
+  \begin{equation}
+  \Delta p=\frac{\rho A^2}{2} \left(\frac{1}{(R-\frac{s}{2})^2}-\frac{1}{(R+\frac{s}{2})^2}\right)
+ \end{equation}
+ 由上式解出$A$代入式\eqref{eq:52Cap}即可。
