@@ -238,3 +238,33 @@ parent={},%
 %
 }%
 }%
+\ifglsentryexists{KelvinTheorem}{}%
+{%
+\gls@defglossaryentry{KelvinTheorem}%
+{%
+name={Kelvin 定理},%
+sort={Kelvin 定理},%
+type={main},%
+first={Kelvin 定理},%
+firstplural={Kelvin 定理s},%
+text={Kelvin 定理},%
+plural={Kelvin 定理s},%
+description={若下列4个条件同时成立，则速度场沿流线的环量积分不变: \begin {itemize} \item 流场连续 \item 流体是\gls {barotropic} \item 流体是理想流体 \item 质量力有势 \end {itemize}},%
+descriptionplural={若下列4个条件同时成立，则速度场沿流线的环量积分不变: \begin {itemize} \item 流场连续 \item 流体是\gls {barotropic} \item 流体是理想流体 \item 质量力有势 \end {itemize}},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%

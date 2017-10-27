@@ -5,3 +5,4 @@
 \contentsline {section}{\numberline {5}第五周第一次课}{14}{section.5}
 \contentsline {section}{\numberline {6}第五周第二次课}{17}{section.6}
 \contentsline {section}{\numberline {7}第六周第一次课}{21}{section.7}
+\contentsline {section}{\numberline {8}第六周第二次课}{23}{section.8}

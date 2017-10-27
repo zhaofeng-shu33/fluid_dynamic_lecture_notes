@@ -64,7 +64,18 @@ Q_u-Q_d= \frac{\partial }{\partial z}(\rho v_r rd\theta dr)\Delta t
   name=正压流体,
   description={$\rho=\rho(p)$,即密度只与压力有关}
 }
-若\glsdesc{barotropic}，那么称流体为\gls{barotropic}，在这种情况下$\nabla \rho=\frac{d\rho}{dp}\nabla p$,
+若\glsdesc{barotropic}，那么称流体为\gls{barotropic}，对于正压流体，定义压力函数
+$\mathbb{P}$为:
+\begin{equation}
+\mathbb{P}=\int \frac{1}{\rho(p)}dp
+\end{equation}
+则容易求出压力函数$\mathbb{P}$的梯度为
+\begin{equation}\label{eq:61barotropicPotential}
+\nabla \mathbb{P} =\frac{d \mathbb{P}}{dp} \nabla p = \frac{\nabla p}{\rho}
+\end{equation}
+即对于正压流体,$\frac{\nabla p}{\rho}$有势。
+
+在这种情况下$\nabla \rho=\frac{d\rho}{dp}\nabla p$,
 因此\eqref{eq:61staticNecess}式化简为：
 \begin{align}
 &\nabla \rho \times \v{f} + \rho \nabla \times \v{f} =  \v{0}\label{eq:61staticExpand}\\
