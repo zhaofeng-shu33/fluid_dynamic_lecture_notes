@@ -4,6 +4,7 @@
 %\documentclass{article}
 %\pagestyle{empty}
 %\usepackage{pstricks-add}
+%\usepackage{tikz}
 %\begin{document}
 %\begin{figure}
 %\begin{pspicture}(0,0)(5,5)
@@ -23,11 +24,10 @@
 %\rput[b](2.6,2.35){$\v{x}$}
 %\end{pspicture}
 %\end{figure}
-%\end{document}
 
 %rewrite the above picture command with tikz
  \begin{tikzpicture}
-  \draw[thick,->] (2,2) -- (2,4);
+  \draw[thick,->] (2,2) -- (2,4);  
   \draw[thick,->] (2,2) -- (4,2);
   \draw[thick,->] (2,2) -- (1,1);
   \draw (2,4) node[anchor=east] {$y$};
@@ -40,3 +40,4 @@
   \draw (3.1,2.7) node[anchor=south] {$O$};
   \draw (3.9,3) node[anchor=south]{$A$};
  \end{tikzpicture}
+%\end{document}

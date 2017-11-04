@@ -100,16 +100,16 @@ p=&\rho R\theta,\text{对液体通常满足不可压条件，即$\rho=$Const}
 
  由于流体不可压，$\nabla\cdot\v{v}=0$,所以\eqref{eq:52TSG}式化简为$T_{ij}=-p\delta_{ij}+2\mu S_{ij}$,
  下面化简$\nabla\cdot \bm{T}$
-\begin{align*}
-\nabla\cdot \bm{T} = & (\frac{\partial}{\partial x_k}\v{e_k})\cdot(T_{ij}\v{e_i}\v{e_j})\\
-= & \frac{\partial T_{ij}}{\partial x_i}\v{e_j}\\
-= & \frac{\partial}{\partial x_i}(-p\delta_{ij}+2\mu S_{ij})\v{e_j}\\
-= & -\frac{\partial p}{\partial x_i}\v{e_i}+\mu \frac{\partial}{\partial x_i}(\frac{\partial v_i}{\partial x_j}+\frac{\partial v_j}{\partial x_i})\v{e_j}\\
-= & -\nabla p+\mu \frac{\partial^2 v_j}{\partial x_i^2}\v{e_j},\text{利用 }\nabla\cdot\v{v}=0\\
+\begin{align}
+\nabla\cdot \bm{T} = & (\frac{\partial}{\partial x_k}\v{e_k})\cdot(T_{ij}\v{e_i}\v{e_j})\nonumber\\
+= & \frac{\partial T_{ij}}{\partial x_i}\v{e_j} \label{eq:52TijUn}\\
+= & \frac{\partial}{\partial x_i}(-p\delta_{ij}+2\mu S_{ij})\v{e_j}\nonumber\\
+= & -\frac{\partial p}{\partial x_i}\v{e_i}+\mu \frac{\partial}{\partial x_i}(\frac{\partial v_i}{\partial x_j}+\frac{\partial v_j}{\partial x_i})\v{e_j}\nonumber\\
+= & -\nabla p+\mu \frac{\partial^2 v_j}{\partial x_i^2}\v{e_j},\text{利用 }\nabla\cdot\v{v}=0\nonumber\label{eq:52nablav0C}\\
 = & -\nabla p+\mu \nabla^2 \v{v}
-\end{align*}
+\end{align}
  将其代入动量方程 \eqref{eq:52Momen}式，并设外力场为重力场，得到均质不可压流的N-S方程：
-\begin{equation}
+\begin{equation}\label{eq:52NSEqUnCompress}
 \rho\frac{\partial \v{v}}{\partial t}+\rho\v{v}\cdot\nabla\v{v}=\rho\v{g}-\nabla p+\mu \nabla^2 \v{v}
  \end{equation}
  下面推导其在柱坐标系下的表达式，此时

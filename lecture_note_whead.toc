@@ -6,3 +6,5 @@
 \contentsline {section}{\numberline {6}第五周第二次课}{17}{section.6}
 \contentsline {section}{\numberline {7}第六周第一次课}{21}{section.7}
 \contentsline {section}{\numberline {8}第六周第二次课}{23}{section.8}
+\contentsline {section}{\numberline {9}第七周第一次课}{28}{section.9}
+\contentsline {section}{\numberline {10}第七周第二次课}{32}{section.10}
