@@ -1,0 +1,35 @@
+%LaTeX with PSTricks extensions
+%%Creator: inkscape 0.92.2
+%%Please note this file requires PSTricks extensions
+%\documentclass{article}
+%\pagestyle{empty}
+%\usepackage{tikz}
+%\begin{document}
+\begin{tikzpicture}
+%reference coordinate 
+  \draw[thick,->] (0,0) -- (1,0);
+  \draw[thick,->] (0,0) -- (0,1);
+  \draw[thick,->] (0,0) -- (-0.6,-0.6);  
+  \draw (0,0) node[anchor=north] {$O$};  
+  \draw (1,0) node[anchor=west] {$x$};      
+  \draw (0,1) node[anchor=south] {$y$};      
+  \draw (-0.6,-0.6) node[anchor=west] {$z$};      
+  %rotational coordinate
+  \draw[thick,->] (2,2) -- (5,0);
+  \draw[thick,->] (2,2) -- (4,5);    
+  \draw[thick,->] (2,2) -- (3,0);      
+  \draw (2,2) node[anchor=east] {$O'$};  
+  \draw (5,0) node[anchor=west] {$x'$};      
+  \draw (4,5) node[anchor=south] {$y'$};      
+  \draw (3,0) node[anchor=north] {$z'$};        
+%point interested
+  \draw[thick,->] (2,2) -- (4.5,2.5);%R'
+  \draw[thick,->] (4.5,2.5) -- (5.5,3);%v'  
+  \draw (4.5,2.5) node[anchor=north] {$\v{R'}$};    
+  \draw (5.5,3) node[anchor=west] {$\v{v'}$};      
+  \draw[thick,->] (3,3.5) -- (4.35,2.6);%r'
+  \draw (3.67,3.05) node[anchor=south] {$\v{r'}$};
+  \draw (2.67,3) node[anchor=south] {$\v{\omega}$};  
+  \draw[thick,<-] (3.2,3) arc [start angle=300, end angle=200, x radius=0.7, y radius=0.5];
+  \end{tikzpicture}
+%\end{document}

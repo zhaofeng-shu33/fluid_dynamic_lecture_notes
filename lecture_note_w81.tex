@@ -1,0 +1,142 @@
+理想不可压缩无旋流动方程
+
+对于理想不可压缩无旋流动，存在速度势函数$\varphi$,并且$\varphi$在域内满足Laplace方程，附加一定的边界条件即可由下面的式子先求出速度势：
+\begin{align}
+\Delta \varphi=&0\nonumber\\
+\frac{\partial F}{\partial t}+\nabla \varphi \cdot \nabla F=&0,\text{壁面条件} \nonumber\\
+\nabla \varphi_{|R=\infty}=&\v{v_{\infty}},\text{无穷远条件}\label{eq:81IdealUnCompressibleIrrotationalEq}
+\end{align}
+解出$\varphi$后，求梯度得速度场，再代入CL方程\eqref{eq:72CLEquation}式中求压强$p$即可。
+
+单连域速度场的唯一性定理
+
+如果求解域$D$是单连通的，采用设速度作差法我们可以得到速度差函数(仍记为$\v{v}$)也满足\eqref{eq:81IdealUnCompressibleIrrotationalEq}式。
+为说明$\v{v}=\v{0}$，考虑动能积分:
+\begin{align*}
+T=&\frac{1}{2}\rho \int_{D} |\v{v}|^2 d\tau\\
+=&\frac{1}{2}\rho \int_{D} \nabla\varphi\cdot\nabla\varphi d\tau\\
+=&\frac{1}{2}\rho \int_{D} \nabla\cdot(\varphi \nabla\varphi) d\tau,\nabla^2\varphi=0\\
+=&\frac{1}{2}\rho \int_{A} (\v{n}\cdot \nabla \varphi)\varphi dA\\
+=&\frac{1}{2}\rho \int_{A} \varphi\frac{\partial \varphi}{\partial n} dA
+\end{align*}
+因此，如果在$D$的边界$A$中逐点指定$\varphi$的值或者$\varphi$沿着边界面的法向导数的值，那么速度差函数在边界$A$中逐点有
+$\varphi\frac{\partial \varphi}{\partial n}=0$，因此上式中动能为零，从而推出$\v{v}=\v{0}$，即我们得到了单连通域解的唯一性的条件为
+如下三类：
+\begin{itemize}
+\item (Dirichlet 边界条件)在$A$上指定$\varphi$ 
+\item (Neumann 边界条件)在$A$上指定$\frac{\partial \varphi}{\partial n}$ 
+\item (混合边界条件)在$A_1$上指定$\frac{\partial \varphi}{\partial n}$ ,在$A_2$上指定$\varphi$,并且$A$可以分成$A_1$和$A_2$的不交并。
+\end{itemize}
+
+速度势函数的极值原理：
+\begin{itemize}
+\item 速度势函数$\varphi$不能在域内达到极大值或极小值。可以用反证法，假设在某点$\varphi$取到极大值，那么以该点为球心取一个半径很小的球，
+有面积分$\oiint_{\Sigma} \frac{\partial \varphi}{\partial n}dA<0$，但由Gauss公式等式左边可化为$\int_{D} \nabla\cdot \v{v}d\tau=0$,矛盾。
+%\item 速度的模$|\nabla \varphi|$不能在域内达到极大值
+\item 在重力场中，压强不能在域内达到极小值。
+对\eqref{eq:72CLEquation}式作用Laplace算子，得到$\Delta p=-\frac{1}{2} \Delta |\v{v}|^2$
+\begin{align*}
+\Delta \frac{1}{2}|\v{v}|^2=&\frac{1}{2}\nabla\cdot(\nabla |\v{v}|^2)\\
+=&\nabla\cdot(\nabla\v{v}\cdot\v{v})\\
+=&\Delta \v{v}\cdot\v{v}+\nabla\v{v}\cdot\nabla\v{v}
+\end{align*}
+$\Delta \v{v}=\nabla\cdot(\nabla \nabla \varphi)=\nabla (\nabla\cdot(\nabla \varphi))=\v{0}$
+所以$\Delta p=-\nabla\v{v}\cdot\nabla\v{v}\leq 0$，对任一域内点的邻域球有:
+\begin{equation}
+\oiint_{\Sigma}\frac{\partial p}{\partial n} dA=\oiint_{\Sigma}\v{n}\cdot\nabla p dA=\iiint_{D} \Delta p d\tau \leq 0
+\end{equation}
+所以该点不可能取到极小值。
+\end{itemize}
+
+
+理想无旋不可压流场势函数三类基本解：
+\begin{enumerate}
+\item 对于均匀流场$\varphi=u_{\infty}x+v_{\infty}y+w_{\infty}z+c$
+\item 对于点源诱导的流场，首先推导速度场，由球对称性有$\v{v}=v(R)\v{e_R}$,考虑通过半径为$R$的球的流量有：$2\pi R v(R)=Q$，因此
+$v(R)=\frac{Q}{4\pi R^2}$,由$\frac{\partial \varphi}{\partial R}=v(R)$积分得$\varphi(R)=-\frac{Q}{4\pi R}+c$，称$Q>0$为点源，若$Q<0$则称为点汇
+\item 偶极子，考虑两个相互靠的很近的源和汇，并定义$m=\displaystyle\lim_{\delta l \to 0}(Q\delta l)>0$,由叠加原理,两个源和汇在空间中产生的速度场为
+（假设$-Q$在原点，$+Q$在$(\delta l,0,0)$：
+\begin{align}\notag
+\varphi=&\frac{Q}{4\pi \sqrt{x^2+y^2+z^2}}+\frac{-Q}{4\pi \sqrt{(x-\delta l)^2+y^2+z^2}}\\
+=&\frac{-mx}{4\pi(\sqrt{x^2+y^2+z^2})^3}\label{eq:81Pole3}
+\end{align}
+\end{enumerate}
+
+下面举一个应用基本解待定系数求解的例子，考虑圆球（圆心在原点，半径为$a$）绕流问题，
+无穷远处来流为$\v{v_{\infty}}=U_{\infty}\v{i}$,
+考虑速度势函数有$\varphi=U_{\infty} x-\frac{qx}{R^3}$的解，
+其中$R=\sqrt{x^2+y^2+z^2}$,这相当于均匀流场的基本解与偶极子的基本解的叠加，
+由于$\varphi$的奇点在球心，属于流场之外，且流场为单边域，故只需通过壁面条件确定系数$q$，
+为此，采用球坐标系，并设$\theta$为空间一点$\v{r}$与$\v{i}$
+的夹角（与一般球坐标$\theta$定义不同）。则$x=R\cos\theta$，所以
+\begin{equation}
+\varphi=\cos\theta(U_{\infty}R-\frac{q}{R^2})
+\end{equation}
+由壁面不可穿透性条件:$\frac{\partial \varphi}{\partial R}_{|R=a}=0$解出$q=-\frac{1}{2}a^3U_{\infty}$，所以
+\begin{align*}
+\varphi=&U_{\infty}R(1+\frac{a^3}{2R^3})\cos\theta\\
+v_R=&\frac{\partial \varphi}{\partial R}=U_{\infty}(1-\frac{a^3}{R^3})\cos\theta\\
+v_{\theta}=&\frac{1}{R}\frac{\partial \varphi}{\partial \theta}=-U_{\infty}(1+\frac{a^3}{R^3})\sin\theta
+\end{align*}
+由Bernoulli方程\eqref{eq:71LambBernoulli}式（不考虑有势力）可进一步解出$p$
+如果考虑壁面$R=a$的速度和压力分布，$v_R=0$,$v_{\theta}=-\frac{3}{2}U_{\infty}\sin\theta$,
+$p=p_{\infty}-\frac{\rho}{2}U_{\infty}^2(\frac{9}{4}\sin^2\theta-1)$
+当$\theta=0$或$\pi$时$v_{\theta}=0$，此时速度为零，分别对应着后驻点和前驻点，压强为$p_0=p_{\infty}+\frac{1}{2}\rho U^2_{\infty}$
+当$\theta=\frac{\pi}{2}$（或$\frac{3\pi}{2}$）时，此时速度达到最大，大小为$\frac{3}{2}v_{\infty}$，压强达到最小，
+$p_{\textrm{min}}=p_{\infty}-\frac{5}{8}\rho U^2_{\infty}$。
+
+针对平面不可压流，可引入流函数$\psi$的概念，有了流函数，速度场可写成:
+\begin{equation}
+\begin{cases}
+u=& \frac{\partial \psi}{\partial y}\\
+v=& -\frac{\partial \psi}{\partial x}
+\end{cases}
+\end{equation}
+
+于是有
+$\frac{\partial u}{\partial x}+\frac{\partial v}{\partial y}=0$，即不可压条件自动满足。若已知速度场$(u,v)$，可对$udy-vdx$做路径积分，
+由Green公式，上面的微分形式环路积分为:
+\begin{equation}
+\oint_{l} udy-vdx=\iint_{A} (\frac{\partial u}{\partial x}+\frac{\partial v}{\partial y})dxdy=0
+\end{equation}
+因此对不可压平面流场，流函数总是存在的，可写成
+\begin{equation}\label{eq:81streamFun}
+\psi(x,y)=\int_{(x_0,y_0)}^{(x,y)} (udy-vdx)
+\end{equation}
+
+流函数具有如下的性质：
+\begin{itemize}
+\item 平面流线是流函数的等值线,因为
+$\frac{dx}{u}=\frac{dy}{v}\Leftrightarrow udy-vdx=0 \Leftrightarrow d\psi=0 \Leftrightarrow \psi=c$
+%$\psi(M_0)-\psi(M)$ ?
+\item 通过某截曲线\overarc{$M_0M$}的体积流量等于$\psi(M)-\psi(M_0)$，因为
+$\int_{M_0}^M (\v{v}\cdot \v{n})ds=\int_{M_0}^M (\v{v}\cdot (dy,-dx))=\int_{M_0}^M (udy-vdx)$,于是由\eqref{eq:81streamFun}式可知。
+\item 若等势线（速度势函数的等值线）存在，则流线与等势线正交。因为前者的法方向为:$(-v,u)$，后者的法方向为$(u,v)$。
+\end{itemize}
+
+对于平面无旋流动，由$\nabla\times \v{v}=0$ 可推出 $\psi$适合平面Laplace方程,附加适当的边界条件，对于单连域,$\psi$
+满足
+\begin{align}
+\frac{\partial^2 \psi}{\partial x^2}+\frac{\partial^2 \psi}{\partial y^2}=&0\nonumber\\
+(\frac{\partial \psi}{\partial y},\frac{\partial \psi}{\partial x})=&(u_{\infty},-v_{\infty}),\text{来流条件} \nonumber\\
+\psi=&c,\text{物面不可穿透条件}
+\end{align}
+
+平面流场流函数三类基本解:
+我们考虑满足$\Delta \psi=0$,
+\begin{enumerate}
+\item 对于均匀流场$\psi=u_{\infty}y-v_{\infty}x+c$
+\item 对于点源诱导的流场，首先推导速度场，类似中的推导我们有$2\pi R v(R)=Q,\v{v}=v(R)\v{e_R}$，在极坐标系中,
+$v(R)=\frac{1}{R}\frac{\partial \psi}{\partial \theta}$，所以$\psi=\frac{Q}{2\pi}\theta+c$，变换到直角坐标系中即为
+\begin{equation}
+\psi=\frac{Q}{2\pi}\arctan\frac{y}{x}+c
+\end{equation}
+\item 偶极子，类似\eqref{eq:81Pole3}式的推导，对$\arctan\frac{y}{x}$对$x$求导得到偶极子诱导的势函数为
+\begin{equation}
+\psi=\frac{-m}{2\pi}\frac{y}{x^2+y^2}+c
+\end{equation}
+\end{enumerate}
+\begin{equation}
+\end{equation}
+\begin{equation}
+\end{equation}
