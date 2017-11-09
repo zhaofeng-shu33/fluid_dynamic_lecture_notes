@@ -9,3 +9,4 @@
 \contentsline {section}{\numberline {9}第七周第一次课}{28}{section.9}
 \contentsline {section}{\numberline {10}第七周第二次课}{32}{section.10}
 \contentsline {section}{\numberline {11}第八周第一次课}{36}{section.11}
+\contentsline {section}{\numberline {12}第八周第二次课}{39}{section.12}

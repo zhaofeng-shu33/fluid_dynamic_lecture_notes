@@ -108,7 +108,10 @@ w(z)=&\lim\limits_{\substack{\delta l\to 0\\Q\delta l \to m}} \left[ \frac{Q}{2\
 \end{align*}
 我们简记$\sigma=|z-z_0|$,$\alpha'=$arg$(z-z_0)$, 则$w(z)=\frac{m}{2\pi\sigma}e^{\pi+\beta-\alpha'}$，
 令Re$w(z)$为常数得到$\sigma=c\cos(\beta-\alpha')$,在平面极坐标系下，由图\ref{fig:82circleInPlanarCoordinate}可知该方程表示一个过$z_0$的圆，
-圆心在过$z_0$,方向与$M$相同的直线上（$c$可以为负数）。
+圆心在过$z_0$,方向与$M$相同的直线上（$c$可以为负数）。对于平面偶极子诱导的复速度，由\eqref{eq:82GQ}式和留数定理可知
+\begin{equation}
+\Gamma_l + i Q_l = \oint_l \frac{M}{2\pi}\frac{1}{(z-z_0)^2}=0
+\end{equation}
 
 \begin{figure}[!ht]
  \centering
@@ -128,21 +131,27 @@ w(z)=&\lim\limits_{\substack{\delta l\to 0\\Q\delta l \to m}} \left[ \frac{Q}{2\
 \begin{table}[!ht]
 \centering
 \begin{tabular}{cccccc}
-\hline
+\Xhline{1pt}
 &复速度 & 模长 & 幅角\\
-\hline
-均匀流 & $u_{\infty}+i v_{\infty}$ & $|V_{\infty}|$ & $\alpha_{\infty}$\\
-点源（汇） & $\frac{Q}{2\pi \sigma} e^{i\alpha'}$ & $\frac{|Q|}{2\pi \sigma}$ & $\begin{cases}\alpha'&Q>0\\\alpha'+\pi&Q<0\end{cases}$ \\
-\hline
+\hline\noalign{\smallskip}
+均匀流 & $u_{\infty}+i v_{\infty}$ & $|V_{\infty}|$ & $\alpha_{\infty}$\\[0.1cm]
+\hline\noalign{\smallskip}
+点源（汇） & $\frac{Q}{2\pi \sigma} e^{i\alpha'}$ & $\frac{|Q|}{2\pi \sigma}$ & $\begin{cases}\alpha'&Q>0\\\alpha'+\pi&Q<0\end{cases}$ \\[0.1cm]
+\hline\noalign{\smallskip}
+点涡 & $\frac{\Gamma}{2\pi \sigma} e^{i(\alpha'+\frac{\pi}{2})}$ & $\frac{|\Gamma|}{2\pi \sigma}$ & $\begin{cases}\alpha'+\frac{\pi}{2}&\Gamma>0\\ \alpha'-\frac{\pi}{2}&\Gamma<0\end{cases}$ \\[0.1cm]
+\Xhline{1pt}
 \end{tabular}
+\caption{基本解的速度场}
 \end{table}
-\begin{equation}
-\end{equation}
-\begin{equation}
-\end{equation}
-\begin{equation}
-\end{equation}
-\begin{equation}
-\end{equation}
-\begin{equation}
-\end{equation}
+
+%下面简单讨论幂函数$w(z)=Az^n$诱导的速度场，这里$A$是实数,$n>0$。不难写出$v^*=nAz^{n-1}$
+% \begin{equation}
+% \end{equation}
+% \begin{equation}
+% \end{equation}
+% \begin{equation}
+% \end{equation}
+% \begin{equation}
+% \end{equation}
+% \begin{equation}
+% \end{equation}
