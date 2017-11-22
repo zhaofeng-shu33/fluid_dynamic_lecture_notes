@@ -1,0 +1,107 @@
+牛顿流体的本构方程
+
+式\eqref{eq:52TSG}给出了牛顿流体的本构方程，记$\lambda=\mu'-\frac{2}{3}\mu$,表示体膨胀系数。
+\eqref{eq:52TSG}写为
+\begin{equation}
+T_{ij}=-p\delta_{ij}+\lambda S_{kk} \delta_{ij} +2\mu S_{ij}
+\end{equation}
+上式中第一项为流体静止时的应力，后两项之和为黏性应力。定义流体的力学压强
+\begin{equation}
+\bar{p}=-\frac{1}{3}T_{ii}
+       =p-\mu'S_{kk}
+\end{equation}
+可以看出若第二黏性应力$\mu'=0$，
+则力学压强$\bar{p}$与热力学压强$p$相等。
+
+NS方程--牛顿流体的运动方程
+
+式\eqref{eq:71generalNS}给出了$\mu'=0$时的Navier-Stokes方程，这里我们考虑流体不可压的情形，即$\nabla\cdot \v{v}=0$,此时
+\eqref{eq:71generalNS}化为
+\begin{equation}\label{eq:102unCompressibleNS}
+\frac{\partial \v{v}}{\partial t}+\v{v}\cdot\nabla\v{v}=\v{f}-\frac{\nabla p}{\rho}+\nu \nabla^2 \v{v}
+\end{equation}
+其中$\nu=\frac{\mu}{\rho}$被称为运动黏性系数。
+
+黏性流体耗散项的影响
+
+在第\ref{sec:62}小节中，针对理想流体我们推导了流体内能、焓的变化。
+%熵的变化没懂，不知道怎么写
+对于一般黏性流体的情形，我们将\eqref{eq:52Energy}式表示的能量方程的产热项和热交换项合并为$Q$于是可得：
+\begin{equation}
+\frac{D}{Dt}(e+\frac{1}{2}|\v{v}|^2)=\v{f}\cdot\v{v}+\frac{1}{\rho}\cdot (\bm{T}\cdot\v{v})+Q
+\end{equation}
+对\eqref{eq:52momen}式表示的动量方程两边同时点乘$\v{v}$可得：
+\begin{equation}
+\frac{D}{Dt}(\frac{1}{2}|\v{v}|^2)=\v{f}\cdot\v{v}+\frac{1}{\rho}\v{v}\cdot(\nabla \cdot \bm{T})
+\end{equation}
+将上面两式相减，得到内能的变化为
+\begin{equation}
+\frac{D e}{Dt}=\frac{1}{\rho}(\nabla\cdot (\bm{T}\cdot\v{v})-\v{v}\cdot(\nabla \cdot \bm{T}))+Q
+\end{equation}
+化简
+\begin{align}\notag
+\nabla\cdot (\bm{T}\cdot\v{v}) = & (\frac{\partial}{\partial x_k}\v{e_k})\cdot (T_{ij}v_j\v{e_i})\\
+= & \frac{\partial T_{ij}}{\partial x_i} v_j + \frac{\partial v_j}{\partial x_i} T_{ij}\label{eq:102nTv}
+\end{align}
+利用\eqref{eq:52TijUn}式
+\begin{align}\notag
+\v{v}\cdot(\nabla \cdot \bm{T}) =& (v_k \v{e_k}) \cdot (\frac{\partial T_{ij}}{\partial x_i}\v{e_j})\\
+=& v_j \frac{\partial T_{ij}}{\partial x_i}\label{eq:102vnT}
+\end{align}
+从\eqref{eq:102nTv},\eqref{eq:102vnT}两式得到：
+\begin{align*}
+\nabla\cdot (\bm{T}\cdot\v{v})-\v{v}\cdot(\nabla \cdot \bm{T}) & = \frac{\partial v_j}{\partial x_i} T_{ij} \\
+& = \frac{\partial v_j}{\partial x_i} (-p\delta_{ij}+\lambda S_{kk} \delta_{ij} +2\mu S_{ij}) \\
+& = -p S_{ii} +\lambda S_{ii}^2 + 2\mu S_{ij}S_{ij}
+\end{align*}
+所以
+\begin{equation}\label{eq:102etIncomplete}
+\frac{D e}{Dt}= -\frac{p}{\rho} S_{ii} + \Phi + Q
+\end{equation}
+其中
+\begin{equation}
+\Phi=\frac{1}{\rho}(\lambda S_{ii}^2 + 2\mu S_{ij}S_{ij})
+\end{equation}
+由上式，$\Phi\leq 0$,$\Phi$被称为耗散项，其作用是使流体微元的内能增加。
+由连续性方程\eqref{eq:52ContiMaterial}式,\eqref{eq:102etIncomplete}式可改写为
+\begin{align}\notag
+\frac{D e}{Dt} =& \frac{p}{\rho^2} \frac{D\rho}{Dt} + \Phi + Q\\
+= & -p  \frac{D}{Dt}\frac{1}{\rho} + \Phi + Q
+\end{align}
+上式与理想流体的内能变化\eqref{eq:62DeDt1}式对比可看出,二者的区别是是否有耗散项$\Phi$。
+类似\eqref{eq:62Enthalpy}式，我们可推出焓的变化公式
+\begin{equation}
+\frac{D i}{D t} = \frac{1}{\rho} \frac{D p }{D t}+ \Phi + Q
+\end{equation}
+
+不可压牛顿型流体的封闭方程组与定解条件
+利用\eqref{eq:102unCompressibleNS}式的结果，对于四个未知数$\v{v},p$，有如下4个标量偏微分方程组：
+\begin{equation}\label{eq:102ClosedNSEqSystem}
+\begin{cases}
+\frac{\partial \v{v}}{\partial t}+\v{v}\cdot\nabla\v{v}&=\v{f}-\frac{\nabla p}{\rho}+\nu \nabla^2 \v{v}\\
+\nabla\cdot\v{v}&=0
+\end{cases}
+\end{equation}
+求解该偏微分方程组需要给出初始条件，即$t=0$时刻速度场的分布$\v{v}=\v{v_0}$,利用不可压条件，对
+\eqref{eq:102unCompressibleNS}式两边取散度，
+可求出$t=0$时
+压力场满足Poisson方程
+\begin{equation}
+\nabla\cdot(\v{v}\cdot\nabla\v{v})=-\frac{\rho}\nabla^2 p +\nabla\cdot \v{f}
+\end{equation}
+其中用到了
+\begin{align*}
+\nabla\cdot(\nabla^2 \v{v}) = & (\frac{\partial}{\partial x_k}\v{e_k})\cdot (\frac{\partial^2 v_i}{\partial x_j^2}\v{e_i})\\
+= & \frac{\partial^3 v_i}{\partial x_j^2\partial x_i} \\
+= & 0
+\end{align*}
+求解\eqref{eq:102ClosedNSEqSystem}式表示的方程组还需要适当的边界条件，具体有
+\begin{itemize}
+\item 固壁无滑移条件:$\v{v}=\v{v_b}$
+\item 界面条件
+    \begin{itemize}
+    \item 界面不可穿透条件$\frac{\partial F}{\partial t}+\nabla \varphi \cdot \nabla F=0$
+    \item 无穷远速度条件
+    \item 压力条件，忽略表面张力的影响，一般取液体自由面的压力等于大气压与液面切应力为零。
+    \end{itemize}
+\end{itemize}
