@@ -6,6 +6,8 @@ focus mainly on those of mathematical symbolic compututatal part of the course, 
     Inkscape for drawing vector graphics
     Latex for typesetting the document
     (casually) Latex for drawing vector graphics (a little bit slow)
+### build command
+`bash build.sh`
     
 ## Dedicated to my friend, *Catherine*
 
